@@ -10,56 +10,65 @@ import { ref, onMounted } from "vue";
 import HardSkills from "./HardSkills.vue";
 import SoftSkills from "./SoftSkills.vue";
 
+// Import all icons
+import tailwindIcon from "@/assets/img/icon/tailwind.png";
+import bootstrapIcon from "@/assets/img/icon/bootstrap.svg";
+import javascriptIcon from "@/assets/img/icon/javascript.png";
+import phpIcon from "@/assets/img/icon/php.svg";
+import nodeIcon from "@/assets/img/icon/node.png";
+import vueIcon from "@/assets/img/icon/vue.png";
+import laravelIcon from "@/assets/img/icon/laravel.png";
+import githubIcon from "@/assets/img/icon/github.png";
+
 const hardSkills = ref([
   {
     name: "Tailwind",
     level: 72,
-    icon: "../../src/assets/img/icon/tailwind.png",
+    icon: tailwindIcon,
     size: "w-6.5 h-4.5",
   },
   {
     name: "Boostrap",
     level: 62,
-    icon: "../../src/assets/img/icon/bootstrap.svg",
+    icon: bootstrapIcon,
     size: "w-6.6 h-5",
   },
   {
     name: "JavaScript",
     level: 92,
-    icon: "../../src/assets/img/icon/javascript.png",
+    icon: javascriptIcon,
     size: "w-5 h-5",
   },
   {
     name: "PHP/MVC",
     level: 88,
-    icon: "../../src/assets/img/icon/php.svg",
+    icon: phpIcon,
     size: "w-7 h-5",
   },
   {
     name: "Node.JS/Express",
     level: 85,
-    icon: "../../src/assets/img/icon/node.png",
+    icon: nodeIcon,
     size: "w-5 h-6",
   },
   {
     name: "Vue.JS",
     level: 95,
-    icon: "../../src/assets/img/icon/vue.png",
+    icon: vueIcon,
     size: "w-5 h-5",
   },
   {
     name: "Laravel",
     level: 83,
-    icon: "../../src/assets/img/icon/laravel.png",
-    size: "w-5, h-5",
+    icon: laravelIcon,
+    size: "w-5 h-5",
   },
   {
     name: "Git/GitHub",
     level: 78,
-    icon: "../../src/assets/img/icon/github.png",
+    icon: githubIcon,
     size: "w-6 h-6",
   },
-  // ... rest of the hard skills data
 ]);
 
 const softSkills = ref([

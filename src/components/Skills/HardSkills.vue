@@ -9,7 +9,7 @@
       <div v-for="skill in skills" :key="skill.name" class="group">
         <div class="flex justify-between items-center mb-1 min-h-8">
           <div class="flex gap-2 pl-1">
-            <img :src="skill.icon" :alt="skill.name" :class="skill.size" />
+            <img :src="skill.icon" :alt="skill.name" :class="skill.size" class="object-contain" />
             <span class="font-medium text-gray-300 group-hover:text-lime-300 transition-colors">
               {{ skill.name }}
             </span>
