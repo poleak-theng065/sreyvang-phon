@@ -6,7 +6,9 @@
     <span
       class="absolute left-0 -bottom-1 w-full h-0.5 bg-lime-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
     ></span>
-    <span class="material-symbols-outlined text-base sm:text-lg md:text-2xl"> {{ item.icon }} </span>
+    <span class="material-symbols-outlined text-base sm:text-lg md:text-2xl">
+      {{ item.icon }}
+    </span>
     <h2 class="text-base sm:text-lg md:text-xl">{{ item.label }}</h2>
   </a>
 </template>
@@ -18,5 +20,9 @@ defineProps(["item"]);
 <style scoped>
 h2 {
   font-family: "Poppins", sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 </style>

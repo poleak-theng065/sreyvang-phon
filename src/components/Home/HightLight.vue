@@ -6,7 +6,7 @@
         :key="item.name"
         class="mx-4 flex gap-2 items-center"
       >
-        <img :src="item.img" :alt="item.name" class="w-12 h-12 object-contain mb-2" />
+        <img :src="getImageUrl(item.img)" :alt="item.name" class="w-12 h-12 object-contain mb-2" />
         <h2 class="text-white font-semibold">{{ item.name }}</h2>
       </div>
       <!-- Duplicate items for seamless looping -->
@@ -15,7 +15,7 @@
         :key="item.name + '-duplicate'"
         class="mx-4 flex gap-2 items-center"
       >
-        <img :src="item.img" :alt="item.name" class="w-12 h-12 object-contain mb-2" />
+        <img :src="getImageUrl(item.img)" :alt="item.name" class="w-12 h-12 object-contain mb-2" />
         <h2 class="text-white font-semibold">{{ item.name }}</h2>
       </div>
     </div>
@@ -26,23 +26,26 @@
 import { ref } from 'vue'
 
 const items = ref([
-  { name: 'Figma', img: '../../src/assets/img/icon/figma.png' },
-  { name: 'Jira', img: '../../src/assets/img/icon/jira.png' },
-  { name: 'GitHub', img: '../../src/assets/img/icon/github.png' },
-  { name: 'Notion', img: '../../src/assets/img/icon/notion.png' },
-  { name: 'Vue.js', img: '../../src/assets/img/icon/vue.png' },
-  { name: 'Node.js', img: '../../src/assets/img/icon/node.png' },
-  { name: 'Tailwind CSS', img: '../../src/assets/img/icon/tailwind.png' },
-  { name: 'HTML5', img: '../../src/assets/img/icon/html5.png' },
-  { name: 'CSS', img: '../../src/assets/img/icon/css.webp' },
-  { name: 'JavaScript', img: '../../src/assets/img/icon/javascript.png' },
-  { name: 'Sass', img: '../../src/assets/img/icon/sass.png' },
-  { name: 'Bootstrap', img: '../../src/assets/img/icon/bootstrap.svg' },
-  { name: 'PHP', img: '../../src/assets/img/icon/php.svg' },
-  { name: 'Laravel', img: '../../src/assets/img/icon/laravel.png' }
+  { name: 'Figma', img: 'figma.png' },
+  { name: 'Jira', img: 'jira.png' },
+  { name: 'GitHub', img: 'github.png' },
+  { name: 'Notion', img: 'notion.png' },
+  { name: 'Vue.js', img: 'vue.png' },
+  { name: 'Node.js', img: 'node.png' },
+  { name: 'Tailwind CSS', img: 'tailwind.png' },
+  { name: 'HTML5', img: 'html5.png' },
+  { name: 'CSS', img: 'css.webp' },
+  { name: 'JavaScript', img: 'javascript.png' },
+  { name: 'Sass', img: 'sass.png' },
+  { name: 'Bootstrap', img: 'bootstrap.svg' },
+  { name: 'PHP', img: 'php.svg' },
+  { name: 'Laravel', img: 'laravel.png' }
 ])
 
-
+// Helper function to construct proper image URLs
+const getImageUrl = (name) => {
+  return new URL(`/src/assets/img/icon/${name}`, import.meta.url).href
+}
 </script>
 
 <style scoped>
