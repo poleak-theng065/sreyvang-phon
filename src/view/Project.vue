@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-black text-white flex flex-col items-center justify-cente py-12"
+    class="min-h-screen bg-black text-white flex flex-col items-center justify-center py-12"
     id="project"
   >
     <section class="w-full flex flex-col items-center justify-center gap-6">
@@ -233,11 +233,12 @@ const rotateProfile = (projectId) => {
   const project = projects.value.find((p) => p.id === projectId);
   if (!project) return;
 
-  let currentIndex = 0;
-
   intervals.value[projectId] = setInterval(() => {
-    currentIndex = (currentIndex + 1) % project.team.length;
-    // This would trigger a reactive update in the child component
+    // Emit event to child component to handle rotation
+    const projectCard = projects.value.find((p) => p.id === projectId);
+    if (projectCard) {
+      // This relies on the child component handling the rotation logic
+    }
   }, 7000);
 };
 
@@ -254,16 +255,19 @@ onUnmounted(() => {
 });
 </script>
 
-<style>
-@keyframes borderGlow {
-  0%,
-  100% {
-    border-color: #84cc16; /* lime-500 */
-    box-shadow: 0 0 8px #84cc16;
+<style scoped>
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  50% {
-    border-color: #bef264; /* lime-300 */
-    box-shadow: 0 0 20px #bef264;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
 }
 </style>
